@@ -4,7 +4,7 @@ export async function getUsers(since) {
   try {
     const { status, data } = await axios({
       method: 'GET',
-      url: `http://localhost:4040/users?since=${since}`,
+      url: `${process.env.REACT_APP_API_URL}users?since=${since}`,
     });
 
     return { status, data };
@@ -17,7 +17,7 @@ export async function getUser(user) {
   try {
     const { status, data } = await axios({
       method: 'GET',
-      url: `http://localhost:4040/users/${user}/details`,
+      url: `${process.env.REACT_APP_API_URL}users/${user}/details`,
     });
 
     return { status, data };
@@ -30,7 +30,7 @@ export async function getRepoUser(user, pageRepo) {
   try {
     const { status, data } = await axios({
       method: 'GET',
-      url: `http://localhost:4040/users/${user}/repos?page=${pageRepo}`,
+      url: `${process.env.REACT_APP_API_URL}users/${user}/repos?page=${pageRepo}`,
     });
 
     return { status, data };
@@ -43,7 +43,7 @@ export async function cadastraClienteFacebook(obj) {
   try {
     const { status, data } = await axios({
       method: 'POST',
-      url: `http://localhost:4040/cadastrar/facebook`,
+      url: `${process.env.REACT_APP_API_URL}cadastrar/facebook`,
       data: obj,
     });
 

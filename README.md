@@ -1,0 +1,1 @@
+See the .ENV.EXAMPLE and add the file .env in the project
