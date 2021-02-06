@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const Button = styled.button`
   position: relative;
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 15px;
-  width: 100%;
   color: ${props => (props.estilo === 'fill' ? '#ffff' : '#25ABE6')};
   background-color: ${props => (props.estilo === 'fill' ? '#47CDFF' : '#ffff')};
   border: 1px solid #47cdff;
@@ -15,6 +15,13 @@ export const Button = styled.button`
   transition: all 0.1s;
   -webkit-transition: all 0.1s;
   cursor: pointer;
+
+  :disabled {
+    cursor: not-allowed;
+  }
+  img {
+    margin-right: 10px;
+  }
 
   :hover {
     background-color: ${props =>

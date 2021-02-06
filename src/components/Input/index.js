@@ -65,7 +65,7 @@ export const InputPassword = props => {
 };
 
 export const InputIcon = props => {
-  const { nome, type, id, label, icon, error, control } = props;
+  const { nome, type, id, label, icon, error, control, iconDirection } = props;
 
   return (
     <InputContainer className="group">
@@ -76,17 +76,31 @@ export const InputIcon = props => {
         as={
           <FormControl variant="outlined" error={!!error}>
             <InputLabel htmlFor={id}>{label}</InputLabel>
-            <OutlinedInput
-              type={type}
-              className="input-style"
-              id={id}
-              endAdornment={
-                <InputAdornment position="end">
-                  <IconButton edge="end">{icon}</IconButton>
-                </InputAdornment>
-              }
-              labelWidth={50}
-            />
+            {iconDirection !== 'left' ? (
+              <OutlinedInput
+                type={type}
+                className="input-style"
+                id={id}
+                endAdornment={
+                  <InputAdornment position="start">
+                    <IconButton edge="start">{icon}</IconButton>
+                  </InputAdornment>
+                }
+                labelWidth={50}
+              />
+            ) : (
+              <OutlinedInput
+                type={type}
+                className="input-style"
+                id={id}
+                startAdornment={
+                  <InputAdornment position="start">
+                    <IconButton edge="start">{icon}</IconButton>
+                  </InputAdornment>
+                }
+                labelWidth={50}
+              />
+            )}
             <FormHelperText id={id}>{error || ''}</FormHelperText>
           </FormControl>
         }
