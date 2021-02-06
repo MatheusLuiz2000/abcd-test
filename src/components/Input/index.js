@@ -72,6 +72,7 @@ export const InputIcon = props => {
       <Controller
         name={nome}
         control={control}
+        key={id}
         as={
           <FormControl variant="outlined" error={!!error}>
             <InputLabel htmlFor={id}>{label}</InputLabel>

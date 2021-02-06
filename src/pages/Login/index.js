@@ -1,6 +1,7 @@
 // Libs
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import * as Yup from 'yup';
 
 // Styles
 import EmailIcon from '@material-ui/icons/Email';
@@ -13,11 +14,32 @@ import Button from '../../components/Button';
 // Images
 import LogoEdu from '../../assets/images/logo.png';
 
-export default function Login() {
-  const { control, handleSubmit, errors } = useForm();
+import fireBase from '../../config/fireBase';
 
-  const onSubmit = e => {
-    console.log(e);
+export default function Login() {
+  const LoginSchema = Yup.object().shape({
+    email: Yup.string('O E-mail é obrigatório')
+      .required('O E-mail é obrigatório')
+      .email('O E-mail deve ser válido'),
+    senha: Yup.string('A senha é obrigatória').required(
+      'A senha é obrigatória'
+    ),
+  });
+
+  const { control, handleSubmit, errors } = useForm({
+    validationSchema: LoginSchema,
+  });
+
+  const onSubmit = async e => {
+    try {
+      const teste = await fireBase
+        .auth()
+        .signInWithEmailAndPassword(e.email, e.senha);
+
+      console.log(teste);
+    } catch (error) {
+      alert(error);
+    }
   };
 
   return (
@@ -42,7 +64,9 @@ export default function Login() {
             label="Senha"
             type="password"
           />
-          <Button estilo="fill">Login</Button>
+          <Button estilo="fill" type="submit">
+            Login
+          </Button>
           <Button estilo="not-fill">Esqueci a senha</Button>
         </form>
       </Box>

@@ -16,6 +16,15 @@ export const InputContainer = styled.div`
     }
   }
 
+  .MuiFormHelperText-root.Mui-error {
+    color: #f44336;
+    margin-top: 6px;
+    margin-left: 7px !important;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600 !important;
+    font-size: 11px !important;
+  }
+
   .MuiFormControl-root {
     width: 100%;
   }
