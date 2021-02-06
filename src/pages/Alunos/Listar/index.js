@@ -2,6 +2,6 @@ import React from 'react';
 
 // import { Container } from './styles';
 
-export default function Listagem() {
+export default function Listar() {
   return <div />;
 }
