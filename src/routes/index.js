@@ -12,7 +12,7 @@ export default function Routes() {
       <Switch>
         <Route path="/login" exact component={Login} />
         <Route path="/alunos/" exact isPrivate component={ListarAlunos} />
-        <Route path="/alunos/adicionar" component={AdicionarAluno} />
+        <Route path="/alunos/adicionar" isPrivate component={AdicionarAluno} />
       </Switch>
     </AuthProvider>
   );
