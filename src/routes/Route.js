@@ -11,7 +11,7 @@ export default function RouteWrapper({
   const currentUser = useContext(AuthContext);
 
   if (isPrivate) {
-    if (!currentUser) {
+    if (currentUser.currentUser === false) {
       return <Redirect to="/login" />;
     }
   }

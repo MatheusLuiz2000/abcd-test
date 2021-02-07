@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, CopyRight } from './styles';
+import { Container } from './styles';
 import LeftMenu from '../LeftMenu';
 
 export default function ContainerContent({ children }) {
@@ -7,7 +7,6 @@ export default function ContainerContent({ children }) {
     <Container>
       <LeftMenu />
       {children}
-      {/* <CopyRight>© 2020 EduEdu, todos os direitos reservados</CopyRight> */}
     </Container>
   );
 }

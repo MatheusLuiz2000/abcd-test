@@ -8,7 +8,10 @@ export default function AuthProvider({ children }) {
 
   useEffect(() => {
     app.auth().onAuthStateChanged(user => {
-      setCurrentUser(user);
+      if (!user) {
+        return setCurrentUser(false);
+      }
+      return setCurrentUser(user);
     });
   }, []);
 

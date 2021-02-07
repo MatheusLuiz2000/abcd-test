@@ -242,6 +242,7 @@ export default function Adicionar() {
           </ContainerModal>
         </>
       </Modal>
+      <p className="copyright">© 2020 EduEdu, todos os direitos reservados</p>
     </ContainerContent>
   );
 }

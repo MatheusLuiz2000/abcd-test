@@ -1383,4 +1383,13 @@ export default createGlobalStyle`
 	animation-delay: 1s;
 }
 
+.copyright {
+	position: absolute;
+  font-size: 15px;
+  color: #afafaf;
+  right: 12px;
+  font-weight: 700;
+  color: #afafaf;
+}
+
 `;

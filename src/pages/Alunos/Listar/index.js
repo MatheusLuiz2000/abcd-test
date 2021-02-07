@@ -194,6 +194,9 @@ export default function Listar() {
           ) : (
             ''
           )}
+          <p className="copyright">
+            © 2020 EduEdu, todos os direitos reservados
+          </p>
         </Container>
       ) : (
         <Loading />

@@ -1,1 +1,4 @@
-See the .ENV.EXAMPLE and add the file .env in the project
+LOGIN PARA ACESSO:
+
+Email: teste@gmail.com
+Senha: 123123
