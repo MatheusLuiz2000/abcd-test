@@ -12,6 +12,11 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
   background-position: center;
+
+  button {
+    width: 100%;
+    justify-content: center;
+  }
 `;
 
 export const Box = styled.div`

@@ -46,6 +46,7 @@ export const InputContainer = styled.div`
   input {
     width: 100%;
     padding: 10px 10px !important;
+    text-transform: lowercase;
     margin: 0em !important;
     box-sizing: border-box;
     border: 1px solid #c3c3c3;
@@ -56,6 +57,10 @@ export const InputContainer = styled.div`
 
     ::placeholder {
       color: #c3c3c3;
+    }
+
+    @media (max-width: 1282px) {
+      width: 180px;
     }
   }
 `;

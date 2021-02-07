@@ -43,9 +43,9 @@ export default function Adicionar() {
     const db = fireBase.firestore();
 
     const data = await db.collection('alunos').add({
-      nome: e.nome,
-      escola: e.escola,
-      anoEscola: anoEscolar === 0 ? 'Pre' : anoEscolar,
+      nome: e.nome.toLowerCase(),
+      escola: e.escola.toLowerCase(),
+      anoEscola: anoEscolar === 0 ? 'pre' : anoEscolar.toString(),
       foto: avatarPrincipal,
     });
 
